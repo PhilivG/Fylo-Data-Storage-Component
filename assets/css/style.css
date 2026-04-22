@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --bg-color-circle: hsl(300, 100%, 100%);
+    --bg-gradiente-bar1: hsl(6, 100%, 80%);
+    --bg-gradiente-bar2: hsl(335, 100%, 65%);
+
+    --bg-color: hsl(229, 57%, 11%);
+    --bg-color-gbleft: hsl(0, 0%, 100%);
+    --bg-color-bar: hsl(227, 57%, 18%);
+    --bg-color-card: hsl(229, 56%, 26%);
+    --bg-color-svg: hsl(229, 57%, 11%);
+
+    --span-color: hsl(243, 100%, 93%);
+    --span-color-gbleft: hsl(232, 51%, 11%);
+    --p-color: hsl(229, 7%, 55%);
+
+    --fm: "Raleway", sans-serif;
+    --fs: 14px;
+    --fs-sm: 0.875rem;
+    --fs-md: 1rem;
+    --fs-lg: 1.25rem --fs-xl: 1.5rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 3rem;
+}
+
+body {
+    background-image: url(../images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    height: 100dvh;
+    font-family: var(--fm);
+    font-size: var(--fs);
+    color: var(--p-color);
+
+    display: flex;
+    flex-direction: column;
+
+    p {
+        line-height: 1.5;
+    }
+
+    span {
+        color: var(--span-color);
+    }
+
+    @media (width >=1024px) {
+        background-image: url(../images/bg-desktop.png);
+        background-color: var(--bg-color);
+        background-position: center 120%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.container {
+    flex-grow: 1;
+
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 1rem;
+    width: 350px;
+
+    @media (width>=1024px) {
+        flex-direction: row;
+        align-items: end;
+        width: auto;
+    }
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-color-card);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.fylo {
+    padding-block: 3rem;
+    gap: 2rem;
+    border-top-right-radius: 7rem;
+
+    .svg-items {
+        display: flex;
+        gap: 1rem;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-color-svg);
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        img {
+            display: block;
+        }
+    }
+
+    @media (width>=1024px) {
+        min-width: 325px;
+        padding-right: 10rem;
+    }
+}
+
+.storage {
+    position: relative;
+    gap: 1rem;
+    text-align: center;
+
+    span {
+        font-weight: 700;
+    }
+
+    .bar-track {
+        background-color: var(--bg-color-bar);
+        border-radius: 1rem;
+        height: 1.2rem;
+        padding: 2px;
+
+        .bar-fill {
+            background: linear-gradient(to right, var(--bg-gradiente-bar1), var(--bg-gradiente-bar2));
+            width: 75%;
+            height: 100%;
+            border-radius: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+
+        .bar-fill::after {
+            content: " ";
+            aspect-ratio: 1/1;
+            height: 75%;
+            background-color: var(--bg-color-circle);
+            border-radius: 100%;
+            margin-right: 2px;
+        }
+    }
+
+    .bar-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -10px;
+    }
+
+    .gb-left {
+        margin-bottom: -70px;
+        align-self: center;
+        padding: 0.3rem 1.5rem;
+        border-radius: 10px;
+        background-color: var(--bg-color-gbleft);
+
+        p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: var(--fs-lg);
+            text-transform: uppercase;
+
+            span {
+                font-size: var(--fs-3xl);
+                color: var(--span-color-gbleft);
+            }
+        }
+
+    }
+
+    @media (width>=1024px) {
+        width: 600px;
+
+        p {
+            text-align: left;
+        }
+
+
+        .gb-left {
+            position: absolute;
+            right: 5%;
+            top: -60px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -10px;
+                right: -10px;
+                border: 20px solid transparent;
+                border-top-color: var(--bg-color-gbleft);
+                border-bottom: none;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+footer {
+    font-size: 0.6875rem;
+    text-align: center;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%);
+}
