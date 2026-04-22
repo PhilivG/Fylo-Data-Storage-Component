@@ -2,6 +2,10 @@
 
 Solución al reto Fylo data storage component https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n de Frontend Mentor.
 
+## Vista previa
+
+https://philivg.github.io/Fylo-Data-Storage-Component/
+
 ## Construido con
 
 - HTML5
